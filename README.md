@@ -80,7 +80,7 @@ In future projects, I would like to focus on:
 
 - [MDN Web Docs](https://developer.mozilla.org/) - Helpful for understanding HTML, CSS, and JavaScript concepts.
 - [CSS-Tricks](https://css-tricks.com/) - Useful for learning Flexbox and responsive layouts.
-- 
+  
 ## Author
 
 **Sanjay Singh**
