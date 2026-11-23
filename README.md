@@ -80,12 +80,11 @@ In future projects, I would like to focus on:
 
 - [MDN Web Docs](https://developer.mozilla.org/) - Helpful for understanding HTML, CSS, and JavaScript concepts.
 - [CSS-Tricks](https://css-tricks.com/) - Useful for learning Flexbox and responsive layouts.
-- [Frontend Mentor](https://www.frontendmentor.io/) - Provided the project challenge and design inspiration.
-
+- 
 ## Author
 
 **Sanjay Singh**
 
 ## Acknowledgments
 
-Thanks to Frontend Mentor for providing the design challenge and an opportunity to practise frontend development skills.
+This project was developed as part of my frontend development learning journey at MountBlue, where I practised HTML, CSS, and JavaScript concepts through hands-on projects.
