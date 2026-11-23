@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Step Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="step active" id="side1">
+          <div class="number">1</div>
+          <div>
+            <p>STEP 1</p>
+            <h4>YOUR INFO</h4>
+          </div>
+        </div>
+
+        <div class="step" id="side2">
+          <div class="number">2</div>
+          <div>
+            <p>STEP 2</p>
+            <h4>SELECT PLAN</h4>
+          </div>
+        </div>
+
+        <div class="step" id="side3">
+          <div class="number">3</div>
+          <div>
+            <p>STEP 3</p>
+            <h4>ADD-ONS</h4>
+          </div>
+        </div>
+
+        <div class="step" id="side4">
+          <div class="number">4</div>
+          <div>
+            <p>STEP 4</p>
+            <h4>SUMMARY</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <!-- STEP 1 -->
+        <div class="form-step active" id="step1">
+          <h1>Personal info</h1>
+
+          <p class="description">
+            Please provide your name, email address, and phone number.
+          </p>
+
+          <label>Name</label>
+          <input type="text" id="name" placeholder="e.g. Stephen King" />
+
+          <label>Email Address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="e.g. stephenking@lorem.com"
+          />
+
+          <label>Phone Number</label>
+          <input type="text" id="phone" placeholder="e.g. +1 234 567 890" />
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="form-step" id="step2">
+          <h1>Select your plan</h1>
+
+          <p class="description">
+            You have the option of monthly or yearly billing.
+          </p>
+
+          <!-- PLANS -->
+          <div class="plans">
+            <div class="plan selected">
+              <img
+                src="assets/images/icon-arcade.svg"
+                alt="Arcade"
+                class="plan-icon"
+              />
+
+              <div>
+                <h3>Arcade</h3>
+                <p>$9/mo</p>
+                <small class="free-months"></small>
+              </div>
+            </div>
+
+            <div class="plan">
+              <img
+                src="assets/images/icon-advanced.svg"
+                alt="Advanced"
+                class="plan-icon"
+              />
+
+              <div>
+                <h3>Advanced</h3>
+                <p>$12/mo</p>
+                <small class="free-months"></small>
+              </div>
+            </div>
+
+            <div class="plan">
+              <img
+                src="assets/images/icon-pro.svg"
+                alt="Pro"
+                class="plan-icon"
+              />
+
+              <div>
+                <h3>Pro</h3>
+                <p>$15/mo</p>
+                <small class="free-months"></small>
+              </div>
+            </div>
+          </div>
+
+          <!-- BILLING TOGGLE -->
+          <div class="billing">
+            <span>Monthly</span>
+
+            <label class="switch">
+              <input type="checkbox" id="billingToggle" />
+              <span class="slider"></span>
+            </label>
+
+            <span>Yearly</span>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="form-step" id="step3">
+          <h1>Pick add-ons</h1>
+
+          <p class="description">
+            Add-ons help enhance your gaming experience.
+          </p>
+
+          <label class="addon">
+            <input type="checkbox" class="addon-check" value="Online service" />
+
+            <div class="addon-content">
+              <h3>Online service</h3>
+              <p>Access to multiplayer games</p>
+            </div>
+
+            <span class="addon-price">+$1/mo</span>
+          </label>
+
+          <label class="addon">
+            <input type="checkbox" class="addon-check" value="Larger storage" />
+
+            <div class="addon-content">
+              <h3>Larger storage</h3>
+              <p>Extra 1TB of cloud save</p>
+            </div>
+
+            <span class="addon-price">+$2/mo</span>
+          </label>
+
+          <label class="addon">
+            <input
+              type="checkbox"
+              class="addon-check"
+              value="Customizable profile"
+            />
+
+            <div class="addon-content">
+              <h3>Customizable profile</h3>
+              <p>Custom theme on your profile</p>
+            </div>
+
+            <span class="addon-price">+$2/mo</span>
+          </label>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="form-step" id="step4">
+          <h1>Finishing up</h1>
+
+          <p class="description">
+            Double-check everything looks OK before confirming.
+          </p>
+
+          <div class="summary" id="summary"></div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="form-step thank-you" id="step5">
+          <img
+            src="assets/images/icon-thank-you.svg"
+            alt="Thank you"
+            class="thank-icon"
+          />
+
+          <h1>Thank you!</h1>
+
+          <p class="description">
+            Thanks for confirming your subscription! We hope you have fun using
+            our platform.
+          </p>
+        </div>
+
+        <!-- NAVIGATION BUTTONS -->
+        <div class="buttons">
+          <button id="prevBtn">Go Back</button>
+
+          <button id="nextBtn">Next Step</button>
+        </div>
+      </div>
+      <!-- END FORM SECTION -->
+    </div>
+    <!-- END CONTAINER -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
