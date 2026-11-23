@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add your GitHub repository URL here](https://github.com/)
-- Live Site URL: Add your deployed project URL here.
+- Solution URL: https://github.com/sanjaysingh-dev/multi-step-form
+- Live Site URL: https://sanjaysingh-dev.github.io/multi-step-form/
 
 ## My process
 
