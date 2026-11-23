@@ -59,27 +59,113 @@ function showStep() {
 
 // VALIDATE STEP 1
 
+
 function validateStep1() {
   const name = document.getElementById("name");
   const email = document.getElementById("email");
   const phone = document.getElementById("phone");
 
-  if (
-    name.value.trim() === "" ||
-    email.value.trim() === "" ||
-    phone.value.trim() === ""
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const phoneError = document.getElementById("phoneError");
+
+  const nameValue = name.value.trim();
+  const emailValue = email.value.trim();
+  const phoneValue = phone.value.trim();
+
+  let isValid = true;
+
+  // CLEAR PREVIOUS ERRORS
+
+  [name, email, phone].forEach(input => {
+    input.classList.remove("invalid");
+  });
+
+  [nameError, emailError, phoneError].forEach(error => {
+    error.textContent = "";
+  });
+
+  // NAME VALIDATION
+
+  const validName = [...nameValue].every(char => {
+    return (
+      (char >= "a" && char <= "z") ||
+      (char >= "A" && char <= "Z") ||
+      char === " " ||
+      char === "-" ||
+      char === "'"
+    );
+  });
+
+  if (nameValue === "") {
+    nameError.textContent = "This field is required";
+    name.classList.add("invalid");
+    isValid = false;
+  } else if (nameValue.length < 2 || !validName) {
+    nameError.textContent = "Please enter a valid name";
+    name.classList.add("invalid");
+    isValid = false;
+  }
+
+  // EMAIL VALIDATION
+
+  const atIndex = emailValue.indexOf("@");
+  const dotIndex = emailValue.lastIndexOf(".");
+
+  if (emailValue === "") {
+    emailError.textContent = "This field is required";
+    email.classList.add("invalid");
+    isValid = false;
+  } else if (
+    atIndex <= 0 ||
+    dotIndex <= atIndex + 1 ||
+    dotIndex === emailValue.length - 1 ||
+    emailValue.includes(" ")
   ) {
-    alert("Please fill all the fields");
-    return false;
+    emailError.textContent = "Please enter a valid email address";
+    email.classList.add("invalid");
+    isValid = false;
   }
 
-  if (!email.checkValidity()) {
-    alert("Please enter a valid email");
-    return false;
+  // PHONE VALIDATION
+
+  let digits = "";
+  let validPhone = true;
+
+  for (let char of phoneValue) {
+    if (char >= "0" && char <= "9") {
+      digits += char;
+    } else if (
+      char !== "+" &&
+      char !== " " &&
+      char !== "-" &&
+      char !== "(" &&
+      char !== ")"
+    ) {
+      validPhone = false;
+    }
   }
 
-  return true;
+  if (phoneValue === "") {
+    phoneError.textContent = "This field is required";
+    phone.classList.add("invalid");
+    isValid = false;
+  } else if (!validPhone || digits.length < 10 || digits.length > 15) {
+    phoneError.textContent = "Please enter a valid phone number";
+    phone.classList.add("invalid");
+    isValid = false;
+  }
+
+  // FOCUS FIRST INVALID INPUT
+
+  if (!isValid) {
+    const firstInvalid = document.querySelector("#step1 input.invalid");
+    firstInvalid.focus();
+  }
+
+  return isValid;
 }
+
 
 // SELECT PLAN
 

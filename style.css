@@ -121,6 +121,25 @@ h1 {
   border-color: #473dff;
 }
 
+/* ERROR STYLING */
+
+.form-step > input.invalid {
+  border: 1px solid #ed3548;
+}
+
+.error-message {
+  display: block;
+  color: #ed3548;
+  font-size: 12px;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  min-height: 0;
+}
+
+.form-step > input.invalid:focus {
+  border-color: #ed3548;
+}
+
 /* PLANS */
 
 .plans {
